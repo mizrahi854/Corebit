@@ -397,25 +397,29 @@
   }
 
   /* כפתור וואטסאפ קבוע */
-  .whatsapp-button {
+  .whatsapp-fixed {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #fff;
+    bottom: 25px;
+    left: 25px;
+    background-color: #25d366;
     border-radius: 50%;
+    width: 60px;
+    height: 60px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    padding: 12px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-decoration: none;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    z-index: 1100;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
   }
-  .whatsapp-button:hover, .whatsapp-button:focus {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    transform: scale(1.1);
-    outline: none;
+  .whatsapp-fixed:hover {
+    background-color: #20b858;
+  }
+  .whatsapp-fixed svg {
+    fill: white;
+    width: 32px;
+    height: 32px;
   }
 </style>
 </head>
@@ -516,7 +520,7 @@
 <section id="contact" role="region" aria-labelledby="contact-title">
   <h3 id="contact-title">צרו קשר</h3>
   <p>מעוניינים בשיתוף פעולה? נשמח לשמוע מכם!</p>
-  <form action="mailto:contact@corebit.com" method="post" enctype="text/plain" aria-label="טופס יצירת קשר">
+  <form action="mailto:yanimizrahi@gmail.com" method="post" enctype="text/plain" aria-label="טופס יצירת קשר">
     <label for="name">שם מלא</label>
     <input type="text" id="name" name="name" placeholder="הכנס את שמך המלא" required />
     <label for="email">אימייל</label>
@@ -535,19 +539,6 @@
 
 </main>
 
-<!-- כפתור וואטסאפ קבוע -->
-<a
-  href="https://wa.me/972505120820"
-  target="_blank"
-  rel="noopener"
-  class="whatsapp-button"
-  aria-label="צור קשר בוואטסאפ למספר 0505120820"
->
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#25D366" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M20.52 3.48A11.77 11.77 0 0012 0C5.373 0 0 5.373 0 12c0 2.119.55 4.096 1.513 5.85L0 24l6.423-1.496A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12 0-3.202-1.249-6.208-3.48-8.52zM12 21.564c-1.874 0-3.632-.6-5.093-1.615l-.363-.228-3.815.888.866-3.72-.236-.376A9.453 9.453 0 012.548 12c0-5.217 4.236-9.454 9.452-9.454 2.52 0 4.887.985 6.67 2.766A9.352 9.352 0 0121.452 12c0 5.217-4.236 9.564-9.452 9.564zm5.31-7.732c-.285-.142-1.686-.833-1.948-.928-.26-.095-.45-.142-.64.143s-.732.928-.9 1.118c-.166.19-.332.214-.615.07-.285-.143-1.203-.444-2.293-1.423-.848-.755-1.42-1.688-1.586-1.972-.166-.285-.018-.44.125-.585.128-.127.285-.332.428-.498.143-.166.19-.285.285-.476.095-.19.048-.357-.024-.5-.072-.142-.64-1.542-.877-2.114-.23-.553-.463-.478-.64-.487l-.55-.01c-.19 0-.5.07-.762.357s-1.001.98-1.001 2.386 1.025 2.772 1.169 2.965c.143.19 2.02 3.08 4.9 4.317.685.296 1.22.473 1.637.606.686.22 1.31.19 1.805.115.55-.084 1.686-.69 1.927-1.36.24-.67.24-1.244.166-1.36-.072-.095-.26-.142-.547-.285z"/>
-  </svg>
-</a>
-
 <script>
   // גלילה חלקה לקישורים ולכפתורים
   document.querySelectorAll('a[href^="#"], button').forEach(elem => {
@@ -556,9 +547,7 @@
       if(href && href.startsWith('#')) {
         e.preventDefault();
         const target = document.querySelector(href);
-        if(target) {
-          target.scrollIntoView({behavior: 'smooth'});
-        }
+        if(target) target.scrollIntoView({behavior: 'smooth'});
       }
     });
   });
@@ -566,4 +555,5 @@
 
 </body>
 </html>
+
 
